@@ -1,0 +1,101 @@
+/* app.component.css */
+header {
+    background-color: #2311c4;    
+    padding: 10px 0;
+    text-align: center;
+    
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  nav .container {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  nav span {
+    display:flexbox;
+    padding: 0;
+    font-size: 25px;
+    color: white;
+  }
+
+  nav h1 {
+    display:flexbox;
+    padding: 0;
+    font-size: 25px;
+    color: white;
+  }
+
+  nav p {
+    display:flexbox;
+    padding: 0;
+    color: white;
+  }
+
+  nav .container .options{
+    display: inline;
+    margin: 0 15px;
+    color: hsl(0, 0%, 4%);
+    text-decoration: none;
+    font-size: 18px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  /* Estilo para o container de botões */
+.options {
+  display: flex;         /* Usar flexbox para alinhar os botões na horizontal */
+  justify-content: center;  /* Centraliza os botões na tela */
+  gap: 20px;             /* Adiciona espaçamento de 20px entre os botões */
+}
+
+/* Estilos para os botões */
+button {
+  padding: 10px 20px;    /* Adiciona padding interno para aumentar o tamanho do botão */
+  font-size: 16px;        /* Aumenta o tamanho da fonte */
+  cursor: pointer;       /* Aparece o cursor de mão ao passar sobre o botão */
+  border: 1px solid #ccc; /* Borda leve */
+  border-radius: 5px;     /* Bordas arredondadas */
+  transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+  margin: 0 10px; 
+}
+
+button:hover {
+  background-color: #f1f1f1; /* Cor de fundo ao passar o mouse */
+}
+
+
+/*
+  nav ul .chat{
+    display: inline;
+    margin: 0 15px;
+    color: hsl(0, 0%, 4%);
+    text-decoration: none;
+    font-size: 18px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  nav ul .sms{
+    display: inline;
+    margin: 0 15px;
+    color: hsl(0, 0%, 4%);
+    text-decoration: none;
+    font-size: 18px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  nav ul .whatsapp{
+    display: inline;
+    margin: 0 15px;
+    color: hsl(0, 0%, 4%);
+    text-decoration: none;
+    font-size: 18px;
+    text-decoration: underline;
+    cursor: pointer;
+  }*/

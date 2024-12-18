@@ -1,0 +1,119 @@
+.whatsapp-box {
+    height: 350px;
+    overflow-y: scroll;
+    padding: 2px;
+    background-color: #e5ddd5;
+    border-radius: 10px;
+  }
+  
+  .whatsapp-message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .whatsapp-message.sent {
+    background-color: #dcf8c6;
+    text-align: right;
+  }
+  
+  .whatsapp-message.received {
+    background-color: #fff;
+    text-align: left;
+  }
+  
+  .whatsapp-input {
+    width: 92%;
+  }
+
+  .card-body {
+    margin-bottom: 20px; /* Adiciona o espaço abaixo da card-body */
+  }
+  
+  .mt-3 {
+    margin-top: 20px; /* Alternativamente, adiciona um espaço superior na div com a classe mt-3 */
+  }
+
+  
+  .custom-button {
+    background-color: #007bff; /* Cor de fundo azul */
+    color: white; /* Cor da fonte branca */
+    border: none; /* Remove a borda padrão */
+    padding: 10px 20px; /* Adiciona espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    transition: all 0.3s ease; /* Transição suave para efeito de hover */
+    border-radius: 5px; /* Borda arredondada */
+  }
+  
+  .custom-button:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Cria o efeito de relevo */
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+  }
+  
+  .custom-button:focus {
+    outline: none; /* Remove o contorno quando o botão é clicado */
+  }
+
+  
+  .custom-green-button {
+    background-color: #28a745; /* Cor de fundo verde */
+    color: white; /* Cor da fonte branca */
+    border: none; /* Remove a borda padrão */
+    padding: 3px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    transition: all 0.3s ease; /* Transição suave para efeito de hover */
+    border-radius: 2px; /* Borda arredondada */
+    text-align: center; /* Alinha o texto ao centro */
+  }
+  
+  .custom-green-button:hover {
+    background-color: #218838; /* Cor de fundo verde mais escuro ao passar o mouse */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Cria o efeito de relevo */
+  }
+  
+  .custom-green-button:focus {
+    outline: none; /* Remove o contorno quando o botão é clicado */
+  }
+
+  
+  a i {
+    margin-right: 8px; /* Adiciona espaçamento entre o ícone e o texto */
+    font-size: 18px;   /* Tamanho do ícone */
+  }
+  
+  a.sms i {
+    color: #3b5998; /* Cor do SMS */
+  }
+  
+  a.chat-web i {
+    color: #0084ff; /* Cor do Chat Web */
+  }
+  
+  a.whatsapp i {
+    color: #25d366; /* Cor do WhatsApp */
+  }  
+  
+  /* styles.css ou componente específico */
+.socials {
+  position: fixed;  /* Fixa a posição na tela */
+  bottom: 20px;     /* Fixa no final da tela com um espaçamento de 20px */
+  right: 20px;      /* Fica 20px da borda direita */
+  display: flex;    /* Alinha os links na horizontal */
+  align-items: center; /* Alinha os itens verticalmente no centro */
+  gap: 15px;        /* Espaçamento entre os links */
+}
+
+.socials a {
+  color: black;       /* Cor preta no texto */
+  font-weight: bold;  /* Texto em negrito */
+  text-decoration: none;  /* Remove o sublinhado do link */
+  font-size: 16px;     /* Tamanho da fonte */
+  display: flex;       /* Para alinhar o ícone e o texto lado a lado */
+  align-items: center; /* Alinha o ícone e o texto verticalmente */
+}
+
+.socials a i {
+  margin-right: 8px;   /* Espaçamento entre o ícone e o texto */
+}
