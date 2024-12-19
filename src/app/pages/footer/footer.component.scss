@@ -1,5 +1,5 @@
-  .chat-box {
-    height: 250px;
+.chat-box {
+    height: 350px;
     overflow-y: scroll;
     padding: 2px;
     background-color: #e5ddd5;
@@ -98,7 +98,7 @@
 .socials {
   position: fixed;  /* Fixa a posição na tela */
   bottom: 20px;     /* Fixa no final da tela com um espaçamento de 20px */
-  right: 20px;      /* Fica 20px da borda direita */
+  right: 130px;      /* Fica 20px da borda direita */
   display: flex;    /* Alinha os links na horizontal */
   align-items: center; /* Alinha os itens verticalmente no centro */
   gap: 15px;        /* Espaçamento entre os links */
@@ -115,4 +115,32 @@
 
 .socials a i {
   margin-right: 8px;   /* Espaçamento entre o ícone e o texto */
+}
+/* CSS para o footer fixo e com cor cinza */
+footer {
+  position: fixed;  /* Torna o footer fixo */
+  bottom: 0;        /* Posiciona na parte inferior da tela */
+  left: 0;          /* Alinha à esquerda */
+  width: 100%;      /* Faz o footer ocupar toda a largura da tela */
+  //background-color: white;  /* Cor cinza */
+  color: white;     /* Cor do texto em branco */
+  padding: 10px 0;  /* Espaçamento vertical para o conteúdo do footer */
+  text-align: center;  /* Alinha o conteúdo (links) ao centro */
+  z-index: 1000;    /* Garante que o footer fique acima de outros conteúdos */
+}
+
+footer .socials {
+  display: flex;          /* Flexbox para alinhar os itens na horizontal */
+  justify-content: center; /* Alinha os itens (links) no centro */
+  gap: 20px;              /* Espaçamento entre os itens */
+}
+
+footer .socials a {
+  text-decoration: none;  /* Remove o sublinhado dos links */
+  //color: white;           /* Cor dos links */
+  font-size: 16px;        /* Tamanho da fonte */
+}
+
+footer .socials a:hover {
+  color: black;         /* Cor de destaque ao passar o mouse */
 }

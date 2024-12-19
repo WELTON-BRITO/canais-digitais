@@ -23,6 +23,8 @@
     "@angular/router": "^17.3.12",
     "@angular/ssr": "^17.3.11",
     "@nebular/theme": "^14.0.2",
+    "@ngx-loading-bar/core": "^7.0.0",
+    "bootstrap": "^5.3.3",
     "express": "^4.18.2",
     "font-awesome": "^4.7.0",
     "ngx-socket-io": "^4.8.1",
