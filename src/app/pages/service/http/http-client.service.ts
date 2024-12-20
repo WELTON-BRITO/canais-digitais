@@ -12,7 +12,6 @@ import { LoadingBarService } from "@ngx-loading-bar/core";
 
 export class HttpService {
   protected urlBase = environment.url_server;
-  protected urlOpen = environment.url_open;
   protected urlCep = 'https://viacep.com.br';
 
   constructor(
@@ -185,23 +184,4 @@ export class HttpService {
     );
   }
 
-  public doGetOpen(
-    path: string,
-    params: any,
-    successHandle: Function,
-    errorHandle?: Function
-  ) {
-   // this.loadingBarService.reset();
-    this.loadingBarService.start();
-
-    let url = this.urlOpen + path;
-   // let message: string = null;
-    if (params == null) params = {};
-
-    return this.responsecallback(
-      this.http.get(url, { params, observe: "response" }),
-      successHandle,
-      errorHandle
-    );
-  }
 }

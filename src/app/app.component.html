@@ -1,4 +1,5 @@
 <!-- app.component.html -->
+<ng-container *ngIf="showHeader">
 <header>
     <nav>
         <div class="container">
@@ -8,9 +9,10 @@
                 <button (click)="buscaCanais($event)" value="sms" *ngIf="showButtons">SMS</button>
                 <button (click)="buscaCanais($event)" value="whatsapp" *ngIf="showButtons">WhatsApp</button>
                 <button (click)="buscaCanais($event)" value="customer-account" *ngIf="showButtons">Minha Conta</button>
-                <button (click)="buscaCanais($event)" value="voltar">Voltar tela inicial</button>
+                <button (click)="buscaCanais($event)" value="voltar" *ngIf="showVoltar">Voltar tela inicial</button>
             </div>
         </div>
     </nav>
 </header>
+</ng-container>
 <router-outlet></router-outlet>

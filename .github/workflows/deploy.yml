@@ -1,0 +1,38 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main  # Ou qualquer outra branch que você usa para produção
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Passo 1: Check-out o código
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      # Passo 2: Configurar o Node.js (versão do Node.js necessária)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Escolha a versão do Node.js conforme seu projeto
+
+      # Passo 3: Instalar dependências do projeto
+      - name: Install dependencies
+        run: npm install
+
+      # Passo 4: Construir o projeto Angular
+      - name: Build the Angular project
+        run: npm run build --prod
+
+      # Passo 5: Deploy para a plataforma (Netlify ou Vercel)
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}  # Autenticação do Netlify
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}  # ID do site no Netlify
+        run: |
+          curl -sL https://github.com/netlify/cli/releases/download/v3.0.0/netlify-cli-linux-x64.tar.gz | tar xz -C /tmp
+          /tmp/netlify deploy --prod --dir=dist/ --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID

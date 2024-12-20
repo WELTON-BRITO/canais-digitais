@@ -1,4 +1,4 @@
-import { ErrorHandler, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChatWebComponent } from './pages/chat-web/chat-web.component';
@@ -28,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     {provide: LocationStrategy, useClass: HashLocationStrategy},
     LoadingBarService,
     HttpService,
-    CustomerAccountService
+    CustomerAccountService    
   ], 
 
 })

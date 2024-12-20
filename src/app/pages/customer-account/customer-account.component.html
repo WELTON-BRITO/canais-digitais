@@ -33,22 +33,31 @@
                             <!-- CEP -->
                             <div class="form-group col-md-4 col-12">
                                 <label for="zip">CEP</label>
-                                <input type="text" formControlName="zip" id="zip" name="zip" class="form-control" mask="00000-000"
-                                    placeholder="Digite seu CEP" (blur)="buscaCep(formCustomerAccount.value)" />
+                                <div class="input-group">
+                                    <input type="text" formControlName="zip" id="zip" name="zip" class="form-control"
+                                        mask="00000-000" placeholder="Digite seu CEP"
+                                        (blur)="buscaCep(formCustomerAccount.value)" />
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button"
+                                            (click)="abrirPesquisaCep()">
+                                            <i class="fa fa-search" aria-hidden="true"></i> Pesquisa CEP
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Rua -->
                             <div class="form-group col-md-4 col-12">
                                 <label for="street">Rua</label>
                                 <input type="text" formControlName="street" id="street" name="street"
-                                    class="form-control" placeholder="Digite sua rua"/>
+                                    class="form-control" />
                             </div>
 
                             <!-- Bairro -->
                             <div class="form-group col-md-4 col-12">
                                 <label for="neighborhood">Bairro</label>
                                 <input type="text" formControlName="neighborhood" id="neighborhood" name="neighborhood"
-                                    class="form-control" placeholder="Digite seu bairro"/>
+                                    class="form-control" />
                             </div>
 
                             <!-- Número -->
@@ -61,21 +70,26 @@
                             <!-- Cidade -->
                             <div class="form-group col-md-4 col-12">
                                 <label for="city">Cidade</label>
-                                <input type="text" formControlName="city" id="city" name="city" class="form-control"
-                                    placeholder="Digite sua cidade"/>
+                                <input type="text" formControlName="city" id="city" name="city" class="form-control" />
                             </div>
 
                             <!-- Estado -->
                             <div class="form-group col-md-4 col-12">
                                 <label for="state">Estado</label>
-                                <input type="text" formControlName="state" id="state" name="state" class="form-control"
-                                    placeholder="Digite seu estado"/>
+                                <input type="text" formControlName="state" id="state" name="state"
+                                    class="form-control" />
                             </div>
                         </div>
 
                         <!-- Botão Salvar -->
                         <div class="form-group">
-                            <button type="submit" class="btn btn-success">Salvar Alterações</button>
+                            <button type="submit" class="btn btn-success" (click)="salvar()">Salvar Alterações</button>
+                        </div>
+                        <div *ngIf="showSuccessMessage" class="alert alert-success">
+                            <strong>Os dados foram salvos com sucesso!</strong>
+                        </div>
+                        <div *ngIf="showErrorMessage" class="alert alert-danger">
+                            <strong>Não foi possível localizar o CEP. Tente realizar pela pesquisa!</strong>
                         </div>
                     </div>
                 </form>

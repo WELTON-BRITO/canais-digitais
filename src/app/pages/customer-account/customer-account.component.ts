@@ -11,12 +11,12 @@ import { HttpClientModule } from '@angular/common/http';
   selector: 'app-customer-account',
   standalone: true,
   imports: [
-    CommonModule, 
-    FooterComponent, 
-    ReactiveFormsModule, 
-    HttpClientModule
+    CommonModule,
+    FooterComponent,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],  // Certifique-se de que ReactiveFormsModule está aqui
-  providers: [CustomerAccountService, HttpService], 
+  providers: [CustomerAccountService, HttpService],
   templateUrl: './customer-account.component.html',
   styleUrls: ['./customer-account.component.scss']
 })
@@ -24,8 +24,11 @@ export class CustomerAccountComponent {
 
   public formCustomerAccount!: FormGroup;  // Especificando o tipo de formCustomerAccount corretamente
 
+  showSuccessMessage = false;
+  showErrorMessage = false;
+
   constructor(private formBuilder: FormBuilder, private router: Router,
-    private serviceCep: CustomerAccountService
+    private serviceCep: CustomerAccountService,
   ) { }
 
   ngOnInit() {
@@ -35,13 +38,13 @@ export class CustomerAccountComponent {
       email: [null],
       phone: [null],
       zip: [null],
-      street: [null],
+      street: [{ value: null, disabled: true }],
       neighborhood: [{ value: null, disabled: true }],
       number: [null],
-      city: [null],
-      state: [null],
+      city: [{ value: null, disabled: true }],
+      state: [{ value: null, disabled: true }],
     });
-    
+
   }
 
   buscaCep(data: any) {
@@ -54,9 +57,43 @@ export class CustomerAccountComponent {
       this.formCustomerAccount.controls['state'].setValue(response.uf.trim());
 
     }, (error: any) => {
-     console.log(error)
+
+      console.log(error)
+
+      this.showErrorMessage = true;
+      setTimeout(() => {
+        this.showErrorMessage = false;
+      }, 3000);
 
     });
+  }
+
+  abrirPesquisaCep() {
+
+    window.open('https://buscacepinter.correios.com.br/app/endereco/index.php', '_blank');
+
+  }
+
+  salvar() {
+    this.showSuccessMessage = true;
+    // Esconde a mensagem após 3 segundos
+    setTimeout(() => {
+      this.showSuccessMessage = false;
+    }, 3000);
+
+    this.formCustomerAccount = this.formBuilder.group({
+      name: [null],
+      email: [null],
+      phone: [null],
+      zip: [null],
+      street: [{ value: null, disabled: true }],
+      neighborhood: [{ value: null, disabled: true }],
+      number: [null],
+      city: [{ value: null, disabled: true }],
+      state: [{ value: null, disabled: true }],
+    });
+
+
   }
 
 }

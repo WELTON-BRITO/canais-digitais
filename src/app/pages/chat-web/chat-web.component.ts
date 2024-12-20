@@ -16,6 +16,8 @@ import { FooterComponent } from '../footer/footer.component';
 export class ChatWebComponent {
   message: string = '';
 
+  showHeader: boolean = true;
+
   constructor(private router: Router) { }
 
   chatHistory: { sender: string, message: string }[] = [
